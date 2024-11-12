@@ -2,12 +2,12 @@ import Fastify from "fastify";
 
 import { connectDb } from "./src/config/connect.js";
 import "dotenv/config"
-import { PORT } from "./src/config/config.js";
+// import { PORT } from "./src/config/config.js";
 import { admin, buildAdminRouter } from "./src/config/setup.js";
 import { registeredRoutes } from "./src/routes/index.js";
 import fastifySocketIO from "fastify-socket.io";
 // import fastifyCors from "@fastify/cors";
-
+export const PORT = process.env.PORT || 3000;
 const init = async () => {
     await connectDb(process.env.MONGO_URI)
     const app = Fastify();
