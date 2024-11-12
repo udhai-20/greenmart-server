@@ -25,7 +25,7 @@ const init = async () => {
     })
     await registeredRoutes(app);
     await buildAdminRouter(app)
-    app.listen({ port: PORT }, (err, addr) => {
+    app.listen({ port: PORT,host: '0.0.0.0' }, (err, addr) => {
         if (err) {
             console.log("check", err);
         } else {
